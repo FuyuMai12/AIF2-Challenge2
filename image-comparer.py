@@ -31,7 +31,7 @@ for filename in sorted(os.listdir('../Class')):
 	avg_difference = np.array(avg_difference)
 
 	tokens = sorted([(avg_difference[i], train_imgs[i]) for i in range(len(train_imgs))])
-	max_allowed = min(tokens[0][0] * 2.0, tokens[0][0] + 2.0)
+	max_allowed = min((tokens[0][0] + 0.1) * 1.125, tokens[0][0] + 0.5)
 	for diff, trainname in tokens:
 		if diff > max_allowed: break
 		# print('Difference = ', diff)
